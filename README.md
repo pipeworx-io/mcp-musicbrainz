@@ -1,31 +1,56 @@
-# @pipeworx/mcp-musicbrainz
+# mcp-musicbrainz
 
-MCP server for music artist and release data via the [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API). Free, no authentication required.
+MusicBrainz MCP — wraps MusicBrainz Web Service v2 (free, no auth)
+
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `search_artists` | Search for music artists by name |
-| `get_artist` | Get full artist details including release list |
-| `search_releases` | Search for albums and releases by title |
-| `get_release` | Get release details including full track listing |
+| `search_artists` | Search for music artists by name. Returns artist IDs, names, types, and countries. Use get_artist to fetch full discography and biographical details. |
+| `search_releases` | Search for albums and releases by title or artist name. Returns release IDs, titles, artists, release dates, and formats. |
 
-## Quickstart via Pipeworx Gateway
+## Quick Start
 
-```bash
-curl -X POST https://gateway.pipeworx.io/mcp \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "method": "tools/call",
-    "params": {
-      "name": "musicbrainz__search_artists",
-      "arguments": { "query": "Radiohead", "limit": 5 }
-    },
-    "id": 1
-  }'
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
+
+```json
+{
+  "mcpServers": {
+    "musicbrainz": {
+      "url": "https://gateway.pipeworx.io/musicbrainz/mcp"
+    }
+  }
+}
 ```
+
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
+
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
+```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Musicbrainz data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
