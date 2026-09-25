@@ -1,18 +1,32 @@
 {
   "name": "@pipeworx/mcp-musicbrainz",
-  "version": "0.1.0",
-  "description": "MCP server for music artist and release data via MusicBrainz API",
+  "version": "0.1.1",
+  "description": "MusicBrainz MCP — wraps MusicBrainz Web Service v2 (free, no auth)",
+  "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
-  "files": ["src"],
-  "scripts": {
-    "build": "tsc",
-    "check": "tsc --noEmit"
+  "bin": {
+    "mcp-musicbrainz": "bin/cli.js"
   },
-  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "musicbrainz", "music", "artists", "albums"],
-  "author": "Pipeworx",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "musicbrainz"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-musicbrainz.git"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-bd899bc162cd3b1ff834842dffe4bad50575ea04e14993cc8c1394d85fb6c2f5",
+    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
   }
 }
