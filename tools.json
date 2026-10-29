@@ -1,0 +1,74 @@
+[
+  {
+    "name": "search_artists",
+    "description": "Search for music artists by name. Returns artist IDs, names, types, and countries. Use get_artist to fetch full discography and biographical details.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Artist name or search query."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of results to return. Defaults to 10."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_artist",
+    "description": "Get artist details including biography, country, founding date, and complete release list. Requires artist ID from search_artists.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "MusicBrainz artist ID (UUID)."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "search_releases",
+    "description": "Search for albums and releases by title or artist name. Returns release IDs, titles, artists, release dates, and formats.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Release title or search query."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum number of results to return. Defaults to 10."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get_release",
+    "description": "Get release details: full track listing, credits, media formats, and metadata. Requires release ID from search_releases.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "MusicBrainz release ID (UUID)."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+]
