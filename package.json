@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-musicbrainz",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "MusicBrainz MCP — wraps MusicBrainz Web Service v2 (free, no auth)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "musicbrainz",
     "gatewaySlug": "musicbrainz",
-    "sourceHash": "v1-26eb2723b913db3cc08d70a777d279a350d20b639b6d52d1913413878b9d8ba5",
-    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
+    "sourceHash": "v1-c0e8afc8906d0684fdf7246dda98ab125db0cb031a8ede704cec03d3f3aaeec2",
+    "sourceCommit": "56cf550e46fed96c0101a3877ccaf8357eecf016"
   }
 }
