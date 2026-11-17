@@ -1,17 +1,17 @@
 # mcp-musicbrainz
 
-MusicBrainz MCP — wraps MusicBrainz Web Service v2 (free, no auth)
+Unofficial MusicBrainz MCP — wraps MusicBrainz Web Service v2 (free, no auth)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1865+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 2007+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
 | `search_artists` | Search for music artists by name. Returns artist IDs, names, types, and countries. Use get_artist to fetch full discography and biographical details. |
-| `get_artist` | Get artist details including biography, country, founding date, and complete release list. Requires artist ID from search_artists. |
+| `musicbrainz_get_artist` | Get artist details including biography, country, founding date, and complete release list. Requires artist ID from search_artists. |
 | `search_releases` | Search for albums and releases by title or artist name. Returns release IDs, titles, artists, release dates, and formats. |
-| `get_release` | Get release details: full track listing, credits, media formats, and metadata. Requires release ID from search_releases. |
+| `musicbrainz_get_release` | Get release details: full track listing, credits, media formats, and metadata. Requires release ID from search_releases. |
 
 ## Quick Start
 
@@ -57,7 +57,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1865+ data sources. The
+Both URLs reach the same gateway and the same 2007+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 

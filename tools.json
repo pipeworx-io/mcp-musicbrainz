@@ -20,7 +20,7 @@
     }
   },
   {
-    "name": "get_artist",
+    "name": "musicbrainz_get_artist",
     "description": "Get artist details including biography, country, founding date, and complete release list. Requires artist ID from search_artists.",
     "inputSchema": {
       "type": "object",
@@ -56,7 +56,7 @@
     }
   },
   {
-    "name": "get_release",
+    "name": "musicbrainz_get_release",
     "description": "Get release details: full track listing, credits, media formats, and metadata. Requires release ID from search_releases.",
     "inputSchema": {
       "type": "object",
